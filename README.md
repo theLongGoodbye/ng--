@@ -18,7 +18,7 @@
 `<app-hero-detail hero="currentHero"></app-hero-detail>`
 
 ***
-四种控制样式的常用模板语法：
+#### 四种控制样式的常用模板语法：
 ```
 <div [class.special]="!isSpecial">This one is not so special</div>
 
@@ -28,6 +28,27 @@
 下面两个用到再看吧，跟上面差不多，区别是控制可以多个样式
 [NgClass]
 [ngStyle]
+```
+
+***
+在使用 ngModel 指令进行双向数据绑定之前，你必须导入 FormsModule 并把它添加到 NgModule 的 imports 列表中。
+
+***
+ngIf 指令通常会用来防范空指针错误。
+
+***
+回车键及失焦事件： <input (keyup.enter)="onEnter(box.value)"  (blur)="update(box.value)">
+
+***
+#### 内容投影： 
+```
+<after-content>
+   <app-child></app-child>
+ </after-content>`
+ 
+  <div>-- projected content begins --</div>
+    <ng-content></ng-content>
+  <div>-- projected content ends --</div>
 ```
 
 

@@ -8,4 +8,4 @@
 生成内联模板
 `ng generate component hero -it`
 ***
-*属性（Property，方括号包裹着的）* 和  *元素属性（Attribute）* 的区别在于，Attribute 只是用于初始化，而 Property 是绑定值，会随着数据源的变化而变化，也就是实时更新
+**属性（Property，方括号包裹着的）** 和  **元素属性（Attribute）** 的区别在于，Attribute 只是用于初始化，而 Property 是绑定值，会随着数据源的变化而变化，也就是实时更新

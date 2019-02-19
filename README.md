@@ -58,3 +58,26 @@ ngIf 指令通常会用来防范空指针错误。
 
 2. 使用 patchValue() 方法可以对表单进行针对性的替换。
 
+***
+#### 模板驱动验证
+#name="ngModel" 把 NgModel 导出成了一个名叫 name 的局部变量。NgModel 把自己控制的 FormControl 实例的属性映射出去，让你能在模板中检查控件的状态，比如 valid 和 dirty。
+```
+<input id="name" name="name" class="form-control"
+      required minlength="4" appForbiddenName="bob"
+      [(ngModel)]="hero.name" #name="ngModel" >
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+
+</div>
+```

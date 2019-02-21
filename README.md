@@ -84,3 +84,23 @@ ngIf 指令通常会用来防范空指针错误。
 
 ***
 作为发布者，你创建一个 Observable 的实例，其中定义了一个订阅者（subscriber）函数。 当有消费者调用 subscribe() 方法时，这个函数就会执行。 订阅者函数用于定义“如何获取或生成那些要发布的值或消息”。
+
+***
+#### 操作符
+操作符接受一些配置项，然后返回一个以来源可观察对象为参数的函数。当执行这个返回的函数时，这个操作符会观察来源可观察对象中发出的值，转换它们，并返回由转换后的值组成的新的可观察对象。<br />
+
+// map((val: number) => val * val);  这个 val 就是来源可观察对象中发出的值
+```
+const nums = of(1, 2, 3);
+ 
+const squareValues = map((val: number) => val * val);
+const squaredNums = squareValues(nums);
+ 
+squaredNums.subscribe(x => console.log(x));
+ 
+// Logs
+// 1
+// 4
+// 9
+```
+

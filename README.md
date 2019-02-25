@@ -104,3 +104,8 @@ squaredNums.subscribe(x => console.log(x));
 // 9
 ```
 
+***
+生成带路有的特性
+`
+ng generate module customers --routing
+`

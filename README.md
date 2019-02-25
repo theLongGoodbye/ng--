@@ -111,4 +111,5 @@ ng generate module customers --routing
 `
 
 ***
+配置路由
 ![配置路由](https://www.angular.cn/generated/images/guide/lazy-loading-ngmodules/lazy-load-relationship.jpg)

@@ -105,7 +105,10 @@ squaredNums.subscribe(x => console.log(x));
 ```
 
 ***
-生成带路由的特性
+生成带路由的特性模块
 `
 ng generate module customers --routing
 `
+
+***
+![配置路由alt](https://www.angular.cn/generated/images/guide/lazy-loading-ngmodules/lazy-load-relationship.jpg)

@@ -105,7 +105,7 @@ squaredNums.subscribe(x => console.log(x));
 ```
 
 ***
-生成带路有的特性
+生成带路由的特性
 `
 ng generate module customers --routing
 `

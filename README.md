@@ -121,3 +121,22 @@ ng generate module customers --routing
 如果“x”其实不是属性，或者是组件的私有属性（比如它不带 @Input 或 @Output 装饰器），那么你也同样会遇到这个错误。
 
 ***
+#### 模块一级的服务文件 provider 写在哪
+// 使用下面的写法，因为可以被摇树优化，避免在 module.ts 的装饰器中指定服务对象
+```
+@Injectable({
+  // we declare that this service should be created
+  // by any injector that includes HeroModule.
+  providedIn: HeroModule,
+})
+```
+
+***
+> 注入器冒泡,组件级找不到就去模块级找，再找不到就去根一级找
+
+***
+#### 为什么要写服务
+最佳实践中要求把数据展现逻辑从数据访问逻辑中拆分出去，也就是说把数据访问逻辑包装进一个单独的服务中， 并且在组件中把数据访问逻辑委托给这个服务。就算是这么简单的应用也要如此。
+
+
+

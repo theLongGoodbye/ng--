@@ -116,5 +116,8 @@ ng generate module customers --routing
 
 ***
 >"Can't bind to 'x' since it isn't a known property of 'y'"是什么意思？
+
 这个错误通常意味着你或者忘了声明指令“x”，或者你没有导入“x”所属的模块。<br>
 如果“x”其实不是属性，或者是组件的私有属性（比如它不带 @Input 或 @Output 装饰器），那么你也同样会遇到这个错误。
+
+***

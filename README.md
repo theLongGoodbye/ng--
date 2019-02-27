@@ -138,5 +138,22 @@ ng generate module customers --routing
 #### 为什么要写服务
 最佳实践中要求把数据展现逻辑从数据访问逻辑中拆分出去，也就是说把数据访问逻辑包装进一个单独的服务中， 并且在组件中把数据访问逻辑委托给这个服务。就算是这么简单的应用也要如此。
 
+***
+### HttpClient
+添加 URL 搜索参数,如果有搜索词，这段代码就会构造一个包含进行过 URL 编码的搜索词的选项对象。如果这个搜索词是“foo”，这个 GET 请求的 URL 就会是 api/heroes/?name=foo
+```
+const options = term ?
+   { params: new HttpParams().set('name', term) } : {};
 
+  return this.http.get<Hero[]>(this.heroesUrl, options)
+    .pipe(
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
+    );
+```
 
+***
+#### 对象的深复制
+```
+data = {name: 11, hwr:88}
+config = { ...data }
+```
